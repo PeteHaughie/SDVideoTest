@@ -2,7 +2,9 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    player.load("rain.mp4");
+    ofSetFrameRate(-1);
+    ofSetVerticalSync(false);
+    player.load("rain.mov");
     player.setLoopState(OF_LOOP_NORMAL);
     player.play();
 }
@@ -14,7 +16,15 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofSetColor(ofColor::white);
     player.draw((ofGetWidth() / 2) - (w / 2), (ofGetHeight() / 2) - (h / 2), w, h);
+//    player.draw(0, 0, ofGetWidth(), ofGetHeight());
+    ofSetColor(ofColor::black);
+    ofFill();
+    ofDrawRectangle(0, 0, ofGetWidth(), 30);
+    ofSetColor(ofColor::green);
+    ofDrawBitmapString(ofToString(ofGetWidth()) + " x " + ofToString(ofGetHeight()), 10, 20);
+    ofDrawBitmapString(ofToString((int)ofGetFrameRate()), ofGetWidth() - 40, 20);
 }
 
 //--------------------------------------------------------------
