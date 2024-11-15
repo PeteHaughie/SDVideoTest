@@ -18,7 +18,6 @@ void ofApp::update(){
 void ofApp::draw(){
     ofSetColor(ofColor::white);
     player.draw((ofGetWidth() / 2) - (w / 2), (ofGetHeight() / 2) - (h / 2), w, h);
-//    player.draw(0, 0, ofGetWidth(), ofGetHeight());
     ofSetColor(ofColor::black);
     ofFill();
     ofDrawRectangle(0, 0, ofGetWidth(), 30);
